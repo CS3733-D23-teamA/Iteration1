@@ -28,7 +28,7 @@
               <Group />
           </children>
       </AnchorPane>
-        <fx:include fx:id="footer" layoutY="620.0" source="Footer.fxml" />
+        <fx:include fx:id="footer" layoutY="645.0" source="Footer.fxml" />
         <Text fx:id="title" fill="#eebd28" layoutY="-32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Secure Login" textAlignment="CENTER" wrappingWidth="700.0" x="290.0" y="100.0">
             <font>
                 <Font name="Open Sans Bold" size="48.0" />

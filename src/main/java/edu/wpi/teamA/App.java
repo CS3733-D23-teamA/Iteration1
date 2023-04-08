@@ -40,6 +40,8 @@ public class App extends Application {
     final Scene scene = new Scene(root);
     primaryStage.setScene(scene);
     primaryStage.show();
+    //    primaryStage.setMaxHeight(720);
+    //    primaryStage.setMaxWidth(1280);
 
     Navigation.navigate(Screen.LOGIN);
   }
