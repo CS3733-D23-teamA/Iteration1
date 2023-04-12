@@ -169,7 +169,7 @@ public class LocNameDAOImp implements IDataBase, ILocNameDAO {
       PreparedStatement ps =
           LocNameProvider.createConnection()
               .prepareStatement(
-                  "DELETE FROM \"Prototype2_schema\".\"LocationName\" WHERE \"longName\" = ? AND \"shortName\" = ?");
+                  "DELETE FROM \"Prototype2_schema\".\"LocationName\" WHERE longName = ? AND shortName = ?");
       ps.setString(1, longName);
       ps.setString(2, shortName);
       ps.executeUpdate();
@@ -195,7 +195,7 @@ public class LocNameDAOImp implements IDataBase, ILocNameDAO {
       PreparedStatement ps =
           LocNameProvider.createConnection()
               .prepareStatement(
-                  "UPDATE \"Prototype2_schema\".\"LocationName\" SET \"longName\" = ?, \"shortName\" = ?, \"nodeType\" = ? WHERE \"longName\" = ? AND \"shortName\" = ?");
+                  "UPDATE \"Prototype2_schema\".\"LocationName\" SET longName = ?, shortName = ?, nodeType = ? WHERE longName = ? AND shortName = ?");
       ps.setString(1, newLongName);
       ps.setString(2, newShortName);
       ps.setString(3, newNodeType);
@@ -224,7 +224,7 @@ public class LocNameDAOImp implements IDataBase, ILocNameDAO {
       PreparedStatement ps =
           LocNameProvider.createConnection()
               .prepareStatement(
-                  "SELECT * FROM \"Prototype2_schema\".\"LocationName\" WHERE \"longName\" = ? AND \"shortName\" = ?");
+                  "SELECT * FROM \"Prototype2_schema\".\"LocationName\" WHERE longName = ? AND shortName = ?");
       ps.setString(1, longName);
       ps.setString(2, shortName);
       ResultSet rs = ps.executeQuery();
@@ -245,7 +245,7 @@ public class LocNameDAOImp implements IDataBase, ILocNameDAO {
       PreparedStatement ps =
           LocNameProvider.createConnection()
               .prepareStatement(
-                  "SELECT * FROM \"Prototype2_schema\".\"LocationName\" WHERE \"nodeType\" = ?");
+                  "SELECT * FROM \"Prototype2_schema\".\"LocationName\" WHERE nodeType = ?");
       ps.setString(1, type);
       ResultSet rs = ps.executeQuery();
 

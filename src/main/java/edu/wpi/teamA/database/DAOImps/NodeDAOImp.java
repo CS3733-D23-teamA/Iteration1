@@ -175,7 +175,7 @@ public class NodeDAOImp implements IDataBase, INodeDAO {
       PreparedStatement ps =
           nodeProvider
               .createConnection()
-              .prepareStatement("DELETE FROM Prototype2_schema.\"Node\" WHERE \"nodeID\" = ?");
+              .prepareStatement("DELETE FROM Prototype2_schema.\"Node\" WHERE nodeID = ?");
       ps.setInt(1, nodeID);
       ps.executeUpdate();
 
@@ -194,7 +194,7 @@ public class NodeDAOImp implements IDataBase, INodeDAO {
           nodeProvider
               .createConnection()
               .prepareStatement(
-                  "UPDATE Prototype2_schema.\"Node\" SET \"xcoord\" = ?, \"ycoord\" = ?, \"floor\" = ?, \"building\" = ? WHERE \"nodeID\" = ?");
+                  "UPDATE Prototype2_schema.\"Node\" SET xcoord = ?, ycoord = ?, floor = ?, building = ? WHERE nodeID = ?");
       ps.setInt(1, xcoord);
       ps.setInt(2, ycoord);
       ps.setString(3, floor);
@@ -223,8 +223,7 @@ public class NodeDAOImp implements IDataBase, INodeDAO {
       PreparedStatement ps =
           nodeProvider
               .createConnection()
-              .prepareStatement(
-                  "SELECT * FROM \"Prototype2_schema\".\"Node\" WHERE \"nodeID\" = ?");
+              .prepareStatement("SELECT * FROM \"Prototype2_schema\".\"Node\" WHERE nodeID = ?");
       ps.setInt(1, nodeID);
       ResultSet rs = ps.executeQuery();
 

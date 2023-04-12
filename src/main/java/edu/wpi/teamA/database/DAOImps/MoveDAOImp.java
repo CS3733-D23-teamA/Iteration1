@@ -179,7 +179,7 @@ public class MoveDAOImp implements IDataBase, IMoveDAO {
       PreparedStatement ps =
           moveProvider
               .createConnection()
-              .prepareStatement("DELETE FROM \"Prototype2_schema\".\"Move\" WHERE \"nodeID\" = ?");
+              .prepareStatement("DELETE FROM \"Prototype2_schema\".\"Move\" WHERE nodeID = ?");
       ps.setInt(1, nodeID);
       ps.executeUpdate();
 
@@ -199,7 +199,7 @@ public class MoveDAOImp implements IDataBase, IMoveDAO {
           moveProvider
               .createConnection()
               .prepareStatement(
-                  "UPDATE \"Prototype2_schema\".\"Move\" SET \"longName\" = ?, \"localDate\" = ? WHERE \"nodeID\" = ?");
+                  "UPDATE \"Prototype2_schema\".\"Move\" SET longName = ?, localDate = ? WHERE nodeID = ?");
       ps.setString(1, longName);
       ps.setDate(2, java.sql.Date.valueOf(localDate));
       ps.setInt(3, nodeID);
@@ -225,8 +225,7 @@ public class MoveDAOImp implements IDataBase, IMoveDAO {
       PreparedStatement ps =
           moveProvider
               .createConnection()
-              .prepareStatement(
-                  "SELECT * FROM \"Prototype2_schema\".\"Move\" WHERE \"nodeID\" = ?");
+              .prepareStatement("SELECT * FROM \"Prototype2_schema\".\"Move\" WHERE nodeID = ?");
       ps.setInt(1, nodeID);
       ResultSet rs = ps.executeQuery();
 
